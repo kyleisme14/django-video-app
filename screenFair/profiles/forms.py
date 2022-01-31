@@ -11,7 +11,7 @@ class ProfileForm(forms.Form):
         self.cleaned_data = super().clean()
         image = self.cleaned_data.get('image')
         if not image:
-            self.cleaned_data['image'] = 'media/uploads/profile_pics/default.jpeg'
+            self.cleaned_data['image'] = 'uploads/profile_pics/default.jpeg'
 
     def signup(self, request, user):
         user.save()

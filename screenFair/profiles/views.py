@@ -25,7 +25,7 @@ class UpdateProfile(UpdateView):
 
     def form_valid(self, form):
         if not form.instance.image:
-            form.instance.image = 'media/uploads/profile_pics/default.jpeg'
+            form.instance.image = 'uploads/profile_pics/default.jpeg'
         return super().form_valid(form)
 
     def get_success_url(self):
