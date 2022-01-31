@@ -22,6 +22,7 @@
             <img src="{{ video.thumbnail.url }}" class="card-img-top pt-2" alt="thumbnail">
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ video.title }}</h5>
+                    <h5 class="card-title text-center"><small>{{ video.unique_key }}</small></h5>
                     <p class="card-text text-muted text-center"><span class="mr-4">{{ video.uploader }}</span><span>{{ video.date_posted | date:"M d, Y" }}</span></p>
                     <a href="{% url 'video-detail' video.pk %}" class="stretched-link"></a>
                 </div>
