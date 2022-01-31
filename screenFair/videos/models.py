@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth.models import User
+import random
+
 
 
 class Video(models.Model):
@@ -13,6 +15,7 @@ class Video(models.Model):
     thumbnail = models.FileField(upload_to='uploads/thumbnails', validators=[
                                  FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'])])
     date_posted = models.DateTimeField(default=timezone.now)
+    unique_key = models.CharField(max_length=7, default='0000000', editable=False)
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
